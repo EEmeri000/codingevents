@@ -10,10 +10,15 @@
     <thead>
     <tr>
         <th>Name</th>
+        <th>Description</th>
+        <th>Address</th>
     </tr>
     </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event}"></td>
+    <tr th:each="entry : ${events}">
+<!--        <td th:text="${event}"></td>-->
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+        <td th:replace="fragments :: address"></td>
     </tr>
 </table>
 
