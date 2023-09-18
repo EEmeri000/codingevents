@@ -9,15 +9,18 @@
 <table class="table table-striped">
     <thead>
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Description</th>
         <th>Address</th>
     </tr>
     </thead>
-    <tr th:each="entry : ${events}">
-<!--        <td th:text="${event}"></td>-->
-        <td th:text="${entry.key}"></td>
-        <td th:text="${entry.value}"></td>
+    <tr th:each="event : ${events}">
+        <td th:text="${event.id}"></td>
+        <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+<!--        <td th:text="${entry.key}"></td>-->
+<!--        <td th:text="${entry.value}"></td>-->
         <td th:replace="fragments :: address"></td>
     </tr>
 </table>
