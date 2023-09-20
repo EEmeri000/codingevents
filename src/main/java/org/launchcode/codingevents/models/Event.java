@@ -17,16 +17,21 @@ public class Event {
     private String contactEmail;
     private int id;
     private static int nextId = 1;
+    private EventType type;
 
 
-    public Event(String name, String description, String contactEmail) {
+    public Event(String name, String description, String contactEmail, EventType type) {
+        this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.type = type;
+
+    }
+    public Event() {
         this.id = nextId;
         nextId++;
     }
-    public Event() {}
 
     public String getName() {
         return name;
@@ -50,6 +55,14 @@ public class Event {
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     public int getId() {
