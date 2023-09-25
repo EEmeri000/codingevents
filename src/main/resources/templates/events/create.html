@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-
 <head th:replace="fragments :: head"></head>
-<body class = "container">
+<body class="container">
 
 <header th:replace="fragments :: header"></header>
+
+<p th:text="${errorMsg}" style="color:red;"></p>
+
 <form method="post">
-    <div class = "form-group">
+    <div class="form-group">
         <label>Name
             <input th:field="${event.name}" class="form-control">
         </label>
@@ -28,15 +30,14 @@
         <label>Type
             <select th:field="${event.type}">
                 <option th:each="type : ${types}"
-                    th:value="${type}"
-                    th:text="${type.displayName}">
-                </option>
+                        th:value="${type}"
+                        th:text="${type.displayName}"
+                ></option>
             </select>
         </label>
     </div>
-
-    <div class = "form-group">
-        <input type="submit" value="Create" class ="btn btn-success">
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-success">
     </div>
 </form>
 
